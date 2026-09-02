@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini Crossword</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <div class="puzzle-meta">
+      <a class="back" href="index.html">&larr; all puzzles</a>
+      <span class="timer" id="timer">0:00</span>
+    </div>
+    <h1 class="puzzle-title" id="title">&nbsp;</h1>
+
+    <div class="solved" id="solved">Solved &mdash; nice.</div>
+
+    <div class="current-clue" id="current-clue"><span>&nbsp;</span></div>
+
+    <div class="grid-wrap">
+      <div class="grid" id="grid" role="grid" aria-label="Crossword grid" tabindex="0"></div>
+    </div>
+    <input class="hidden-input" id="mobile-input" autocomplete="off" autocapitalize="characters" inputmode="text" aria-hidden="true">
+
+    <div class="controls">
+      <button id="btn-check">Check</button>
+      <button id="btn-reveal-cell">Reveal cell</button>
+      <button id="btn-reveal">Reveal all</button>
+      <button id="btn-clear">Clear</button>
+    </div>
+
+    <div class="clues">
+      <div>
+        <h2>Across</h2>
+        <ol id="across"></ol>
+      </div>
+      <div>
+        <h2>Down</h2>
+        <ol id="down"></ol>
+      </div>
+    </div>
+
+    <p class="error" id="error" hidden></p>
+  </main>
+
+  <script src="crossword.js"></script>
+</body>
+</html>

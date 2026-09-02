@@ -1,0 +1,35 @@
+{
+  "title": "get to drilling",
+  "author": "Ryan",
+  "date": "2026-08-14",
+  "grid": [
+    ".LEE.",
+    "MIXUE",
+    "AVILA",
+    "OILER",
+    ".DER."
+  ],
+  "circles": [
+  "...O.",
+  "...O.",
+  "...O.",
+  "OOOOO",
+  "...O."
+],
+  "clues": {
+    "across": {
+      "1": "Common Korean surname",
+      "4": "Chinese dessert chain known for cheap ice cream",
+      "6": "California central coast beach town--Alternatively a province of Spain ",
+      "7": "Homophones--Canadian Hockey Pro (maybe)",
+      "8": "German masculine definite article"
+    },
+    "down": {
+      "1": "Enraged",
+      "2": "Act of Banishment",
+      "3": "Homophones--Famous Mathematician",
+      "4": "Leader of the cultural revolution",
+      "5": "Organ housing the vestibular system"
+    }
+  }
+}
