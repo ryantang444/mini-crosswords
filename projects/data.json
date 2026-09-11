@@ -1,9 +1,30 @@
 [
   {
-    "title": "Example Project",
-    "blurb": "Replace this entry: edit projects/data.json and drop a photo in projects/photos/.",
+    "title": "Mini Crosswords",
+    "blurb": "A small hand-built crossword engine — grid rendering, keyboard input, and clue navigation, no frameworks.",
     "image": "photos/placeholder.svg",
-    "github": "https://github.com/yourname/example",
+    "github": "",
+    "link": "../crosswords/"
+  },
+  {
+    "title": "Dummy Project Two",
+    "blurb": "One or two sentences about what this project does and why you built it.",
+    "image": "photos/placeholder-2.svg",
+    "github": "https://github.com/yourname/dummy-two",
     "link": ""
+  },
+  {
+    "title": "Dummy Project Three",
+    "blurb": "Another placeholder card — swap in a real title, blurb, and screenshot.",
+    "image": "photos/placeholder-3.svg",
+    "github": "https://github.com/yourname/dummy-three",
+    "link": ""
+  },
+  {
+    "title": "Dummy Project Four",
+    "blurb": "Cards with a live link show both a GitHub link and a Visit link, like this one.",
+    "image": "photos/placeholder-4.svg",
+    "github": "https://github.com/yourname/dummy-four",
+    "link": "https://example.com"
   }
 ]
