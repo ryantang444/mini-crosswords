@@ -1,14 +1,9 @@
-/* --- Base --- */
 :root {
   --bg: #fafaf7;
   --ink: #1a1a1a;
   --muted: #6b6b6b;
   --line: #d8d6cf;
-  --accent: #b8860b;      /* muted amber */
-  --highlight: #fff2b8;   /* current word */
-  --cursor: #ffd54a;      /* active cell */
-  --error: #c94a3a;
-  --ok: #2f8f4a;
+  --accent: #b8860b;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,8 +13,6 @@
     --muted: #9a9a9a;
     --line: #3a3a3f;
     --accent: #e0b04d;
-    --highlight: #4a3f10;
-    --cursor: #7a6220;
   }
 }
 
@@ -39,247 +32,50 @@ html, body {
 main {
   max-width: 640px;
   margin: 0 auto;
-  padding: 3rem 1.25rem 4rem;
+  padding: 4rem 1.25rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* --- Header --- */
-header.site {
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
-}
-header.site h1 {
+h1 {
   font-family: Georgia, "Iowan Old Style", serif;
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: 500;
-  margin: 0 0 0.25rem;
+  margin: 0 0 0.5rem;
   letter-spacing: -0.01em;
 }
-header.site p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-header.site a {
-  color: var(--muted);
-  text-decoration: none;
-  border-bottom: 1px dotted var(--muted);
-}
-header.site a:hover { color: var(--accent); border-color: var(--accent); }
 
-/* --- Puzzle list (index) --- */
-ul.puzzle-list {
+p.tagline {
+  margin: 0 0 2rem;
+  color: var(--muted);
+}
+
+nav ul {
   list-style: none;
-  padding: 0;
   margin: 0;
-}
-ul.puzzle-list li {
-  border-bottom: 1px solid var(--line);
-}
-ul.puzzle-list li:first-child { border-top: 1px solid var(--line); }
-ul.puzzle-list a {
+  padding: 0;
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1rem;
-  padding: 1rem 0.25rem;
-  text-decoration: none;
-  color: var(--ink);
-  transition: background 0.1s;
-}
-ul.puzzle-list a:hover { background: var(--highlight); }
-ul.puzzle-list .title { font-weight: 500; }
-ul.puzzle-list .meta { color: var(--muted); font-size: 0.85rem; font-variant-numeric: tabular-nums; }
-
-.empty {
-  color: var(--muted);
-  font-style: italic;
-  padding: 2rem 0;
-  text-align: center;
-}
-
-/* --- Puzzle page --- */
-.puzzle-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  color: var(--muted);
-  font-size: 0.9rem;
-  margin-bottom: 1.25rem;
-}
-.puzzle-meta .back { text-decoration: none; color: var(--muted); border-bottom: 1px dotted var(--muted); }
-.puzzle-meta .back:hover { color: var(--accent); border-color: var(--accent); }
-.puzzle-meta .timer { font-variant-numeric: tabular-nums; }
-
-.puzzle-title {
-  font-family: Georgia, serif;
-  font-size: 1.6rem;
-  font-weight: 500;
-  margin: 0 0 1.25rem;
-}
-
-/* --- Grid --- */
-.grid-wrap {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-}
-.grid {
-  display: grid;
-  gap: 1px;
-  background: var(--ink);
-  border: 1px solid var(--ink);
-  user-select: none;
-}
-.cell {
-  position: relative;
-  background: var(--bg);
-  aspect-ratio: 1 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Georgia, serif;
-  font-size: 1.6rem;
-  font-weight: 500;
-  cursor: pointer;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-.cell.block { background: var(--ink); cursor: default; }
-.cell.highlight { background: var(--highlight); }
-.cell.cursor { background: var(--cursor); }
-.cell.wrong { color: var(--error); }
-.cell.circled::before {
-  content: '';
-  position: absolute;
-  inset: 3px;
-  border-radius: 50%;
-  border: 1px solid var(--muted);
-  pointer-events: none;
-  z-index: 0;
-}
-.cell.circled .letter { position: relative; z-index: 1; }
-.cell.circled .num { z-index: 2; }
-.cell .num {
-  position: absolute;
-  top: 1px;
-  left: 3px;
-  font-family: ui-sans-serif, system-ui, sans-serif;
-  font-size: 0.6rem;
-  font-weight: 400;
-  color: var(--muted);
-  line-height: 1;
-}
-
-/* Hidden input for mobile keyboard */
-.hidden-input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-  left: -9999px;
-}
-
-/* --- Clue bar (current clue above grid or below) --- */
-.current-clue {
-  background: var(--highlight);
-  padding: 0.75rem 1rem;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
-  min-height: 2.5rem;
-  display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 0.5rem;
 }
-.current-clue .num {
-  font-weight: 600;
+
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+}
+
+nav a:hover {
+  border-color: var(--accent);
   color: var(--accent);
-  flex-shrink: 0;
 }
 
-/* --- Controls --- */
-.controls {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  margin: 1rem 0 2rem;
-  flex-wrap: wrap;
-}
-.controls button {
-  background: var(--bg);
-  color: var(--ink);
-  border: 1px solid var(--line);
-  padding: 0.4rem 0.9rem;
-  font-family: inherit;
-  font-size: 0.9rem;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: all 0.1s;
-}
-.controls button:hover { border-color: var(--accent); color: var(--accent); }
-.controls button:active { background: var(--highlight); }
-
-/* --- Clue lists --- */
-.clues {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-top: 1rem;
-}
-@media (max-width: 480px) {
-  .clues { grid-template-columns: 1fr; gap: 1.5rem; }
-}
-.clues h2 {
-  font-family: Georgia, serif;
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0 0 0.5rem;
-  padding-bottom: 0.25rem;
-  border-bottom: 1px solid var(--line);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-.clues ol {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.clues li {
-  display: flex;
-  gap: 0.5rem;
-  padding: 0.25rem 0.4rem;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  line-height: 1.35;
-}
-.clues li:hover { background: var(--highlight); }
-.clues li.active { background: var(--highlight); font-weight: 500; }
-.clues li .n {
+nav .soon {
   color: var(--muted);
-  flex-shrink: 0;
-  font-variant-numeric: tabular-nums;
-  min-width: 1.5rem;
-  text-align: right;
-}
-
-/* --- Solved banner --- */
-.solved {
-  background: var(--ok);
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-  font-family: Georgia, serif;
-  font-size: 1.2rem;
-  display: none;
-}
-.solved.show { display: block; }
-
-/* --- Error state --- */
-.error {
-  color: var(--error);
-  padding: 2rem 0;
-  text-align: center;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+  cursor: default;
 }

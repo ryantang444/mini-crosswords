@@ -3,73 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mini Crosswords &mdash; Ryan</title>
+  <title>Ryan</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main>
-    <header class="site">
-      <h1>Mini Crosswords</h1>
-      <p>hosting my minis</p>
-    </header>
+    <h1>Ryan</h1>
+    <p class="tagline">Hi, I'm Ryan.</p>
 
-    <ul class="puzzle-list" id="list"></ul>
-    <p class="empty" id="empty" hidden>No puzzles yet. Drop a JSON file in <code>puzzles/</code> and add its name to <code>puzzles/index.json</code>.</p>
-    <p class="error" id="error" hidden></p>
+    <nav>
+      <ul>
+        <li><a href="crosswords/">Mini Crosswords</a></li>
+        <li><span class="soon">Projects — coming soon</span></li>
+      </ul>
+    </nav>
   </main>
-
-  <script>
-  (async function () {
-    const list = document.getElementById('list');
-    const empty = document.getElementById('empty');
-    const errorEl = document.getElementById('error');
-
-    try {
-      const res = await fetch('puzzles/index.json', { cache: 'no-store' });
-      if (!res.ok) throw new Error('Could not load puzzles/index.json (' + res.status + ')');
-      const slugs = await res.json();
-
-      if (!Array.isArray(slugs) || slugs.length === 0) {
-        empty.hidden = false;
-        return;
-      }
-
-      const puzzles = await Promise.all(slugs.map(async (slug) => {
-        try {
-          const r = await fetch('puzzles/' + slug + '.json', { cache: 'no-store' });
-          if (!r.ok) return null;
-          const p = await r.json();
-          return { slug, ...p };
-        } catch { return null; }
-      }));
-
-      // newest first if `date` is provided
-      puzzles
-        .filter(Boolean)
-        .sort((a, b) => (b.date || '').localeCompare(a.date || ''))
-        .forEach(p => {
-          const li = document.createElement('li');
-          const a = document.createElement('a');
-          a.href = 'puzzle.html?id=' + encodeURIComponent(p.slug);
-          a.innerHTML =
-            '<span class="title">' + escapeHTML(p.title || p.slug) + '</span>' +
-            '<span class="meta">' + escapeHTML(p.date || '') + '</span>';
-          li.appendChild(a);
-          list.appendChild(li);
-        });
-
-      if (!list.children.length) empty.hidden = false;
-    } catch (e) {
-      errorEl.hidden = false;
-      errorEl.textContent = e.message;
-    }
-
-    function escapeHTML(s) {
-      return String(s).replace(/[&<>"']/g, c => ({
-        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-      }[c]));
-    }
-  })();
-  </script>
 </body>
 </html>

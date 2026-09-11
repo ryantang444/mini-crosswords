@@ -1,25 +1,30 @@
-# Mini Crosswords
+# ryantang444's site
 
-A minimalist static site for hosting playable mini crosswords. No build step, no framework, just HTML + CSS + a bit of JS.
+Personal homepage plus a minimalist static app for hosting playable mini crosswords. No build step, no framework, just HTML + CSS + a bit of JS.
 
 ## Structure
 
 ```
 .
-├── index.html          # Landing page — lists all puzzles
-├── puzzle.html         # Playable crossword — loads ?id=<slug>
-├── style.css           # Shared styles (light + dark)
-├── crossword.js        # Puzzle rendering, input, solve detection
-├── puzzles/
-│   ├── index.json      # Array of puzzle slugs, e.g. ["2026-08-16-heart"]
-│   └── <slug>.json     # One file per puzzle
+├── index.html           # Homepage
+├── style.css            # Homepage styles
+├── crosswords/
+│   ├── index.html       # Puzzle list
+│   ├── puzzle.html      # Playable crossword — loads ?id=<slug>
+│   ├── style.css        # Shared styles (light + dark)
+│   ├── crossword.js     # Puzzle rendering, input, solve detection
+│   └── puzzles/
+│       ├── index.json   # Array of puzzle slugs, e.g. ["2026-08-16-heart"]
+│       └── <slug>.json  # One file per puzzle
 └── README.md
 ```
 
+Future projects get their own top-level folder alongside `crosswords/`, linked from the homepage.
+
 ## Adding a new puzzle
 
-1. Create `puzzles/<slug>.json` (e.g. `2026-08-20-flags.json`). Slug becomes the URL: `puzzle.html?id=<slug>`.
-2. Add the slug to `puzzles/index.json`.
+1. Create `crosswords/puzzles/<slug>.json` (e.g. `2026-08-20-flags.json`). Slug becomes the URL: `crosswords/puzzle.html?id=<slug>`.
+2. Add the slug to `crosswords/puzzles/index.json`.
 3. Commit + push.
 
 ### Puzzle JSON format
