@@ -1,6 +1,6 @@
 # ryantang444's site
 
-Personal homepage plus a minimalist static app for hosting playable mini crosswords. No build step, no framework, just HTML + CSS + a bit of JS.
+Personal homepage plus a minimalist static app for hosting playable mini crosswords.
 
 ## Structure
 
