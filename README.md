@@ -16,10 +16,31 @@ Personal homepage plus a minimalist static app for hosting playable mini crosswo
 │   └── puzzles/
 │       ├── index.json   # Array of puzzle slugs, e.g. ["2026-08-16-heart"]
 │       └── <slug>.json  # One file per puzzle
+├── projects/
+│   ├── index.html       # Project grid (fetches data.json)
+│   ├── style.css        # Grid/card styles (light + dark)
+│   ├── data.json        # Array of project entries
+│   └── photos/          # Cover images referenced from data.json
 └── README.md
 ```
 
-Future projects get their own top-level folder alongside `crosswords/`, linked from the homepage.
+Future projects/apps get their own top-level folder alongside `crosswords/` and `projects/`, linked from the homepage.
+
+## Adding a new project card
+
+1. Drop a cover photo in `projects/photos/` (any image format works).
+2. Add an entry to `projects/data.json`:
+   ```json
+   {
+     "title": "Project Name",
+     "blurb": "One or two sentences describing it.",
+     "image": "photos/your-photo.jpg",
+     "github": "https://github.com/you/repo",
+     "link": ""
+   }
+   ```
+   `link` is optional — set it if the project has its own page/demo (e.g. `../crosswords/`); otherwise the card title links straight to `github`. Leave `github` blank to omit that link.
+3. Commit + push.
 
 ## Adding a new puzzle
 

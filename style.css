@@ -72,10 +72,3 @@ nav a:hover {
   border-color: var(--accent);
   color: var(--accent);
 }
-
-nav .soon {
-  color: var(--muted);
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 2px;
-  cursor: default;
-}

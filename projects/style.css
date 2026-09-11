@@ -1,0 +1,153 @@
+/* --- Base --- */
+:root {
+  --bg: #fafaf7;
+  --ink: #1a1a1a;
+  --muted: #6b6b6b;
+  --line: #d8d6cf;
+  --accent: #b8860b;
+  --card-bg: #f3f1ea;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17171a;
+    --ink: #ececec;
+    --muted: #9a9a9a;
+    --line: #3a3a3f;
+    --accent: #e0b04d;
+    --card-bg: #1f1f23;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+}
+
+/* --- Header --- */
+header.site {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1rem;
+  margin-bottom: 2.5rem;
+}
+header.site h1 {
+  font-family: Georgia, "Iowan Old Style", serif;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.01em;
+}
+header.site p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+header.site a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--muted);
+}
+header.site a:hover { color: var(--accent); border-color: var(--accent); }
+
+/* --- Project grid --- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s;
+}
+.project-card:hover { border-color: var(--accent); }
+
+.project-card .thumb {
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--line);
+}
+.project-card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card .body {
+  padding: 1rem 1.1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.project-card h2 {
+  font-family: Georgia, "Iowan Old Style", serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.project-card h2 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.project-card h2 a:hover { color: var(--accent); }
+
+.project-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.project-card .links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.25rem;
+}
+.project-card .links a {
+  font-size: 0.85rem;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1px;
+}
+.project-card .links a:hover { color: var(--accent); border-color: var(--accent); }
+
+.empty {
+  color: var(--muted);
+  font-style: italic;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.error {
+  color: #c94a3a;
+  padding: 2rem 0;
+  text-align: center;
+}

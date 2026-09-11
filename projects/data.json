@@ -1,0 +1,9 @@
+[
+  {
+    "title": "Example Project",
+    "blurb": "Replace this entry: edit projects/data.json and drop a photo in projects/photos/.",
+    "image": "photos/placeholder.svg",
+    "github": "https://github.com/yourname/example",
+    "link": ""
+  }
+]
