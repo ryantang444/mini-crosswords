@@ -7,24 +7,10 @@
     "link": "../crosswords/"
   },
   {
-    "title": "Dummy Project Two",
-    "blurb": "One or two sentences about what this project does and why you built it.",
-    "image": "photos/placeholder-2.svg",
-    "github": "https://github.com/yourname/dummy-two",
+    "title": "GP + SAE Hybrid Approach for Credit Problem",
+    "blurb": "Build, trained, and evaluated a hybrid approach for genetic programming + stacked auto-encoder for credit risk problem",
+    "image": "photos/gp-sae-credit-scores.jpg",
+    "github": "https://github.com/ryantang444/GP_SAE_Credit",
     "link": ""
-  },
-  {
-    "title": "Dummy Project Three",
-    "blurb": "Another placeholder card — swap in a real title, blurb, and screenshot.",
-    "image": "photos/placeholder-3.svg",
-    "github": "https://github.com/yourname/dummy-three",
-    "link": ""
-  },
-  {
-    "title": "Dummy Project Four",
-    "blurb": "Cards with a live link show both a GitHub link and a Visit link, like this one.",
-    "image": "photos/placeholder-4.svg",
-    "github": "https://github.com/yourname/dummy-four",
-    "link": "https://example.com"
   }
 ]
