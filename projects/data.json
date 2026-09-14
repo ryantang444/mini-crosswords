@@ -2,7 +2,7 @@
   {
     "title": "Mini Crosswords",
     "blurb": "A small hand-built crossword engine — grid rendering, keyboard input, and clue navigation, no frameworks.",
-    "image": "photos/placeholder.svg",
+    "image": "photos/crossword-grid.png",
     "github": "",
     "link": "../crosswords/"
   },
